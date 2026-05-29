@@ -3,49 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>高校生でもわかる！フロイトの精神分析入門</title>
+    <title>「普通」って誰が決めた？高校生でもわかるフーコー入門</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Zen Maru Gothic', sans-serif;
-            background-color: #f0f9ff;
+            background-color: #f8fafc;
             color: #334155;
             line-height: 1.8;
         }
         .hero-bg {
-            background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+            background: linear-gradient(135deg, #dcfce7 0%, #4ade80 100%);
         }
         .card {
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
         }
-        /* 氷山アニメーション用 */
-        @keyframes float {
+        /* 監視の光アニメーション */
+        @keyframes sweep {
+            0% { transform: rotate(-20deg); }
+            50% { transform: rotate(20deg); }
+            100% { transform: rotate(-20deg); }
+        }
+        .search-light {
+            transform-origin: 150px 150px;
+            animation: sweep 4s ease-in-out infinite;
+        }
+        /* ふわふわアニメーション */
+        @keyframes float-slow {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-8px); }
             100% { transform: translateY(0px); }
         }
-        .floating-iceberg {
-            animation: float 6s ease-in-out infinite;
+        .floating {
+            animation: float-slow 4s ease-in-out infinite;
         }
     </style>
 </head>
 <body>
 
     <!-- ヘッダー / ヒーローセクション -->
-    <header class="hero-bg py-16 px-4 text-center shadow-sm">
-        <div class="max-w-3xl mx-auto">
-            <span class="bg-pink-600 text-white text-sm font-bold px-3 py-1 rounded-full mb-4 inline-block">心理学入門</span>
-            <h1 class="text-3xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight">
-                心はまるで「氷山」？<br>
-                <span class="text-pink-600 text-2xl md:text-4xl mt-2 block">フロイトの精神分析がわかるページ</span>
+    <header class="hero-bg py-16 px-4 text-center shadow-sm relative overflow-hidden">
+        <!-- 背景の装飾 -->
+        <div class="absolute top-4 left-4 text-4xl opacity-20 floating" style="animation-delay: 0s;">👁️</div>
+        <div class="absolute bottom-4 right-8 text-5xl opacity-20 floating" style="animation-delay: 1s;">🏫</div>
+        <div class="absolute top-10 right-10 text-3xl opacity-20 floating" style="animation-delay: 2s;">📱</div>
+
+        <div class="max-w-3xl mx-auto relative z-10">
+            <span class="bg-green-700 text-white text-sm font-bold px-3 py-1 rounded-full mb-4 inline-block shadow">哲学入門</span>
+            <h1 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight drop-shadow-md">
+                「普通」って誰が決めたの？<br>
+                <span class="text-green-900 text-2xl md:text-4xl mt-3 block bg-white/80 inline-block px-4 py-2 rounded-2xl transform -rotate-1">見えないルールを疑うフーコーの哲学</span>
             </h1>
-            <p class="text-slate-600 md:text-lg">
-                「つい変なことを言っちゃった」「変な夢を見た」<br>
-                それ、あなたの心の奥底（深層心理）の仕業かもしれません。
+            <p class="text-white font-medium md:text-lg bg-black/10 inline-block px-4 py-2 rounded-xl backdrop-blur-sm">
+                「みんなやってるから」「校則だから」<br>
+                その当たり前、実は誰かに「コントロール」されてるかも！？
             </p>
         </div>
     </header>
@@ -53,190 +69,179 @@
     <!-- メインコンテンツ -->
     <main class="max-w-4xl mx-auto px-4 py-12">
 
-        <!-- セクション1: フロイトって誰？ -->
+        <!-- セクション1: フーコーって誰？ -->
         <section class="mb-16">
-            <h2 class="text-2xl font-bold text-slate-800 border-b-4 border-blue-400 pb-2 mb-6 flex items-center">
-                <span class="text-3xl mr-2">🧔‍♂️</span> フロイトってどんな人？
+            <h2 class="text-2xl font-bold text-slate-800 border-b-4 border-green-400 pb-2 mb-6 flex items-center">
+                <span class="text-3xl mr-2">👨‍🦲</span> フーコーってどんな人？
             </h2>
-            <div class="bg-white rounded-2xl shadow-md p-6 md:p-8 flex flex-col md:flex-row items-center gap-6">
+            <div class="bg-white rounded-2xl shadow-md p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 border-t-4 border-slate-200">
                 <div class="md:w-2/3">
                     <p class="mb-4">
-                        <strong>ジークムント・フロイト</strong>（1856〜1939年）は、オーストリアの精神科医で、「精神分析の父」と呼ばれています。
+                        <strong>ミシェル・フーコー</strong>（1926〜1984年）は、スキンヘッドにメガネがトレードマークの、フランスを代表する哲学者です。
                     </p>
                     <p>
-                        彼の一番の功績は、<strong class="text-pink-600">「人間の心には、自分でも気づいていない『無意識』の領域がある」</strong>と発見したこと。今では当たり前のように使われる「深層心理」や「トラウマ」といった言葉も、彼がいなければ生まれなかったかもしれません。
+                        彼の考え方の中心は<strong class="text-green-600">「権力（けんりょく）」</strong>です。権力というと「偉い政治家が命令すること」をイメージしがちですが、フーコーは**「いやいや、権力はもっと身近にあって、目に見えない形で僕たちを操っているんだよ」**と主張しました。
                     </p>
                 </div>
-                <div class="md:w-1/3 bg-blue-50 rounded-xl p-4 text-center">
-                    <p class="text-sm text-slate-500 mb-2">名言</p>
-                    <p class="font-bold text-slate-700 italic">「自我は自分自身の主（あるじ）ではない」</p>
-                    <p class="text-xs mt-2 text-slate-500">（私たちは自分の心を全てコントロールできているわけではない、という意味）</p>
+                <div class="md:w-1/3 bg-green-50 rounded-xl p-4 text-center shadow-inner">
+                    <p class="text-sm text-slate-500 mb-2">名言（要約）</p>
+                    <p class="font-bold text-green-800 italic">「権力は上から押し付けられるものではなく、下から湧き上がる網の目のようなものだ」</p>
                 </div>
             </div>
         </section>
 
-        <!-- セクション2: 心の氷山モデル -->
+        <!-- セクション2: パノプティコン -->
         <section class="mb-16">
-            <h2 class="text-2xl font-bold text-slate-800 border-b-4 border-blue-400 pb-2 mb-6 flex items-center">
-                <span class="text-3xl mr-2">🧊</span> 心の構造「氷山モデル」
+            <h2 class="text-2xl font-bold text-slate-800 border-b-4 border-green-400 pb-2 mb-6 flex items-center">
+                <span class="text-3xl mr-2">🗼</span> あなたも見られている？「パノプティコン」
             </h2>
             <p class="mb-8">
-                フロイトは、人間の心を<strong>「海に浮かぶ氷山」</strong>に例えました。あなたが普段「これが自分の心だ」と思っている部分は、実はほんの一部にすぎないのです。
+                フーコーの哲学を理解する一番有名なキーワードが<strong>「パノプティコン（一望監視施設）」</strong>です。これは、昔の人が考えた「理想的な刑務所」のデザインですが、フーコーは「現代社会そのものがこれだ！」と言いました。
             </p>
 
             <div class="flex flex-col md:flex-row gap-8 items-center bg-white rounded-2xl shadow-md p-6 md:p-8">
                 
-                <!-- 氷山のSVGイラスト -->
+                <!-- パノプティコンのSVGイラスト -->
                 <div class="w-full md:w-1/2 flex justify-center">
-                    <svg viewBox="0 0 300 300" class="w-full max-w-sm floating-iceberg">
-                        <defs>
-                            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="0%" stop-color="#f0f9ff" />
-                                <stop offset="100%" stop-color="#e0f2fe" />
-                            </linearGradient>
-                            <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="0%" stop-color="#1e40af" />
-                                <stop offset="100%" stop-color="#1e3a8a" />
-                            </linearGradient>
-                        </defs>
-                        <!-- 空 -->
-                        <rect width="300" height="150" fill="url(#sky)" />
-                        <!-- 太陽 -->
-                        <circle cx="250" cy="50" r="20" fill="#fde047" />
-                        <!-- 海 -->
-                        <rect y="150" width="300" height="150" fill="url(#sea)" />
+                    <svg viewBox="0 0 300 300" class="w-full max-w-sm">
+                        <!-- 背景 -->
+                        <circle cx="150" cy="150" r="140" fill="#f1f5f9" />
                         
-                        <!-- 水面波線 -->
-                        <path d="M0 150 Q 25 145, 50 150 T 100 150 T 150 150 T 200 150 T 250 150 T 300 150" fill="none" stroke="#93c5fd" stroke-width="2" />
-
-                        <!-- 氷山 上部（意識） -->
-                        <path d="M150 50 L190 150 L100 150 Z" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
-                        
-                        <!-- 氷山 下部（無意識） -->
-                        <path d="M100 150 L190 150 L230 270 L140 290 L60 250 Z" fill="#f9a8d4" opacity="0.9" />
-                        
-                        <!-- 前意識ライン（水面下すぐ） -->
-                        <line x1="85" y1="170" x2="200" y2="170" stroke="#93c5fd" stroke-width="2" stroke-dasharray="4" />
-
-                        <!-- ラベル -->
-                        <g font-family="'Zen Maru Gothic', sans-serif" font-weight="bold">
-                            <!-- 意識 -->
-                            <rect x="15" y="80" width="60" height="25" rx="4" fill="#ffffff" opacity="0.9"/>
-                            <text x="45" y="97" text-anchor="middle" font-size="12" fill="#334155">意識</text>
-                            <line x1="75" y1="92" x2="135" y2="110" stroke="#475569" stroke-width="1" />
-                            
-                            <!-- 前意識 -->
-                            <rect x="15" y="160" width="60" height="25" rx="4" fill="#ffffff" opacity="0.9"/>
-                            <text x="45" y="177" text-anchor="middle" font-size="12" fill="#334155">前意識</text>
-                            
-                            <!-- 無意識 -->
-                            <rect x="15" y="230" width="60" height="25" rx="4" fill="#ffffff" opacity="0.9"/>
-                            <text x="45" y="247" text-anchor="middle" font-size="12" fill="#334155">無意識</text>
-                            <line x1="75" y1="242" x2="135" y2="230" stroke="#ffffff" stroke-width="1" />
+                        <!-- 周りの小部屋（独房） -->
+                        <g stroke="#cbd5e1" stroke-width="2" fill="#ffffff">
+                            <path d="M150 10 L165 40 A110 110 0 0 0 135 40 Z" />
+                            <path d="M220 28 L200 55 A110 110 0 0 0 165 40 Z" />
+                            <path d="M272 80 L235 95 A110 110 0 0 0 200 55 Z" />
+                            <path d="M290 150 L250 150 A110 110 0 0 0 235 95 Z" />
+                            <path d="M272 220 L235 205 A110 110 0 0 0 250 150 Z" />
+                            <path d="M220 272 L200 245 A110 110 0 0 0 235 205 Z" />
+                            <path d="M150 290 L165 260 A110 110 0 0 0 200 245 Z" />
+                            <path d="M80 272 L100 245 A110 110 0 0 0 135 260 Z" />
+                            <path d="M150 290 L135 260 A110 110 0 0 0 100 245 Z" />
+                            <path d="M28 220 L65 205 A110 110 0 0 0 100 245 Z" />
+                            <path d="M10 150 L50 150 A110 110 0 0 0 65 205 Z" />
+                            <path d="M28 80 L65 95 A110 110 0 0 0 50 150 Z" />
+                            <path d="M80 28 L100 55 A110 110 0 0 0 65 95 Z" />
+                            <path d="M150 10 L135 40 A110 110 0 0 0 100 55 Z" />
                         </g>
+
+                        <!-- 小部屋の中の人（ドット） -->
+                        <g fill="#94a3b8">
+                            <circle cx="150" cy="25" r="4" />
+                            <circle cx="205" cy="40" r="4" />
+                            <circle cx="250" cy="85" r="4" />
+                            <circle cx="275" cy="150" r="4" />
+                            <circle cx="250" cy="215" r="4" />
+                            <circle cx="205" cy="260" r="4" />
+                            <circle cx="150" cy="275" r="4" />
+                            <circle cx="95" cy="260" r="4" />
+                            <circle cx="50" cy="215" r="4" />
+                            <circle cx="25" cy="150" r="4" />
+                            <circle cx="50" cy="85" r="4" />
+                            <circle cx="95" cy="40" r="4" />
+                        </g>
+
+                        <!-- 監視の光（アニメーション） -->
+                        <path class="search-light" d="M150 150 L80 10 A140 140 0 0 1 220 10 Z" fill="#fef08a" opacity="0.6" />
+
+                        <!-- 中央の監視塔 -->
+                        <circle cx="150" cy="150" r="25" fill="#334155" />
+                        <circle cx="150" cy="150" r="15" fill="#1e293b" />
+                        <!-- 塔の窓 -->
+                        <circle cx="150" cy="150" r="5" fill="#ef4444" opacity="0.8"/>
+                        
+                        <!-- テキスト -->
+                        <text x="150" y="195" text-anchor="middle" font-family="'Zen Maru Gothic', sans-serif" font-size="12" font-weight="bold" fill="#334155" class="bg-white">中央の監視塔</text>
                     </svg>
                 </div>
 
                 <!-- 解説テキスト -->
                 <div class="w-full md:w-1/2 space-y-4">
-                    <div class="p-4 bg-white border-2 border-slate-100 rounded-xl shadow-sm">
-                        <h3 class="font-bold text-lg text-blue-600 mb-1">🌊 意識（表層心理）</h3>
-                        <p class="text-sm">水面から出ている部分。今、あなたが「考えている」「感じている」と<strong>自分でわかっている心</strong>のこと。「お腹すいたな」「この記事おもしろいな」など。</p>
+                    <div class="p-4 bg-yellow-50 border-2 border-yellow-200 rounded-xl shadow-sm">
+                        <h3 class="font-bold text-lg text-yellow-700 mb-1">👀 見えない看守のトリック</h3>
+                        <p class="text-sm">パノプティコンは、中央の塔から周りの部屋が丸見えですが、**部屋からは塔の中が見えません。** つまり、「今見られているかどうか」がわからないのです。</p>
                     </div>
                     
-                    <div class="p-4 bg-blue-50 border-2 border-blue-200 rounded-xl shadow-sm">
-                        <h3 class="font-bold text-lg text-blue-700 mb-1">🏊‍♂️ 前意識（ぜんいしき）</h3>
-                        <p class="text-sm">水面のすぐ下。普段は意識していないけれど、<strong>思い出そうとすればすぐ思い出せること</strong>。「昨日の晩ごはん何だったっけ？」「あ、カレーだ！」となる部分です。</p>
+                    <div class="p-4 bg-green-50 border-2 border-green-200 rounded-xl shadow-sm">
+                        <h3 class="font-bold text-lg text-green-700 mb-1">🎭 いつしか「自分」で監視する</h3>
+                        <p class="text-sm">見られているかもしれないというプレッシャーから、人は**「看守がいなくても、勝手にルールを守る良い子」**になります。自分で自分を監視（＝コントロール）するようになるのです。</p>
                     </div>
 
-                    <div class="p-4 bg-pink-900 text-white rounded-xl shadow-sm">
-                        <h3 class="font-bold text-lg text-pink-200 mb-1">⚓ 無意識（深層心理）</h3>
-                        <p class="text-sm">水深深くの巨大な部分。自分では<strong>絶対に思い出せないし、気づいていない心の奥底</strong>。抑え込んだ感情、本能的な欲望、忘れたいトラウマなどがここに沈んでいます。実は心の大部分はコレ！</p>
+                    <div class="p-4 bg-slate-800 text-white rounded-xl shadow-sm">
+                        <h3 class="font-bold text-lg text-blue-300 mb-1">📱 これって現代のSNS？</h3>
+                        <p class="text-sm">「誰かに見られているかも」「炎上するかも」と気にして、SNSで発言を消したり、周りに合わせたりしていませんか？まさに私たちが生きる社会が巨大なパノプティコンなのです。</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- セクション3: 無意識の力 -->
+        <!-- セクション3: 身近な権力 -->
         <section class="mb-16">
-            <h2 class="text-2xl font-bold text-slate-800 border-b-4 border-blue-400 pb-2 mb-6 flex items-center">
-                <span class="text-3xl mr-2">👻</span> 「無意識」が顔を出す瞬間
+            <h2 class="text-2xl font-bold text-slate-800 border-b-4 border-green-400 pb-2 mb-6 flex items-center">
+                <span class="text-3xl mr-2">🏫</span> 「知」は「権力」なり
             </h2>
             <p class="mb-6">
-                普段は心の奥底に沈んでいる「無意識」ですが、時々ふとした瞬間に表（意識）に漏れ出てくることがあります。フロイトは、これらを観察することで無意識を知ろうとしました。
+                フーコーは、私たちが信じている「知識」や「常識」こそが、人を縛る権力だと考えました。
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- 夢 -->
-                <div class="card bg-white p-6 rounded-2xl shadow-md border-t-4 border-pink-400">
-                    <h3 class="text-xl font-bold mb-3 flex items-center"><span class="text-2xl mr-2">💤</span> 夢</h3>
+                <!-- 学校という権力 -->
+                <div class="card bg-white p-6 rounded-2xl shadow-md border-t-4 border-blue-400">
+                    <h3 class="text-xl font-bold mb-3 flex items-center"><span class="text-2xl mr-2">⏰</span> 学校の時間割とチャイム</h3>
                     <p class="text-slate-600 mb-3">
-                        フロイトは「夢は無意識への王道である」と言いました。寝ている時は「理性のバリア」が緩むため、無意識に抑え込んでいた本当の願望や不安が、形を変えて夢に出てくると考えたのです。
-                    </p>
-                    <p class="text-sm text-slate-500 bg-slate-50 p-3 rounded">
-                        例：「空を飛ぶ夢」は自由になりたい欲求の表れかも？
+                        チャイムが鳴ったら席に座り、前を向いて45分間じっとする。これ、実は工場で効率よく働くための**「身体の訓練」**だとフーコーは言います。学校は「社会にとって扱いやすい人間」を生産する場でもあるのです。
                     </p>
                 </div>
 
-                <!-- 言い間違い -->
-                <div class="card bg-white p-6 rounded-2xl shadow-md border-t-4 border-blue-400">
-                    <h3 class="text-xl font-bold mb-3 flex items-center"><span class="text-2xl mr-2">🙊</span> 言い間違い（失錯行為）</h3>
+                <!-- 偏差値という権力 -->
+                <div class="card bg-white p-6 rounded-2xl shadow-md border-t-4 border-pink-400">
+                    <h3 class="text-xl font-bold mb-3 flex items-center"><span class="text-2xl mr-2">💯</span> テストの点数・偏差値</h3>
                     <p class="text-slate-600 mb-3">
-                        ただの言い間違いやド忘れも、フロイトによれば偶然ではありません。「本当は言いたくない」「実はこう思っている」という無意識の本音がポロリと漏れてしまった状態だと説明しました。
-                    </p>
-                    <p class="text-sm text-slate-500 bg-slate-50 p-3 rounded">
-                        例：嫌いな会議の時間を、無意識のうちに忘れてしまう。
+                        「偏差値が低い＝ダメなこと」という"知識"が、私たちに「もっと勉強しなきゃ」と思い込ませます。誰かに強制されなくても、**テストというシステム（知）が私たちを自発的に操っている（権力）**わけです。
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- コラム：エス・自我・超自我 -->
-        <section class="bg-pink-50 border border-pink-200 rounded-3xl p-6 md:p-10 mb-16 relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-4 opacity-10 text-6xl">🧠</div>
-            <h2 class="text-xl font-bold text-pink-800 mb-4 flex items-center">
-                💡 ちょっと発展：心の中の３人の住人
+        <!-- コラム：狂気の歴史 -->
+        <section class="bg-indigo-50 border border-indigo-200 rounded-3xl p-6 md:p-10 mb-16 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-10 text-6xl">📖</div>
+            <h2 class="text-xl font-bold text-indigo-800 mb-4 flex items-center">
+                💡 ちょっと発展：「異常」って誰が決めた？
             </h2>
-            <p class="mb-6 text-slate-700">
-                フロイトは、心を「意識・無意識」で分けるだけでなく、その働きを３つのキャラクターに例えました。
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center">
-                    <div class="text-3xl mb-2">👿</div>
-                    <h3 class="font-bold text-pink-600">イド（エス）</h3>
-                    <p class="text-sm mt-2">「遊びたい！」「食べたい！」という<strong>本能や欲求</strong>の塊。主に無意識の中にいます。</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center">
-                    <div class="text-3xl mb-2">👼</div>
-                    <h3 class="font-bold text-blue-600">超自我（スーパーエゴ）</h3>
-                    <p class="text-sm mt-2">「ルールは守らなきゃ」「それはダメ！」という<strong>道徳心や良心</strong>。親の教えなどがベース。</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center border-2 border-indigo-400">
-                    <div class="text-3xl mb-2">🧑</div>
-                    <h3 class="font-bold text-indigo-600">自我（エゴ）</h3>
-                    <p class="text-sm mt-2">イドと超自我の間で挟まれながら<strong>「じゃあこうしよう」と現実的な判断をする</strong>調整役（＝普段のあなた）。</p>
-                </div>
+            <div class="text-slate-700 space-y-4">
+                <p>
+                    フーコーの有名な本に**『狂気の歴史』**というものがあります。
+                </p>
+                <p>
+                    昔は、ちょっと変わった人や理性がないとされた人は「神聖な存在」だったり、街の中に普通にいたりしました。しかし、近代になって「医学」や「科学」が発達すると、彼らは「異常者（心の病気）」というレッテルを貼られ、病院に閉じ込められるようになりました。
+                </p>
+                <p class="font-bold text-indigo-700 bg-white p-4 rounded-lg shadow-sm border border-indigo-100">
+                    つまり、「何が普通（正常）で、何が異常か」という基準は、時代やその時の"科学的な知識"によって都合よく作られたものに過ぎないのです。
+                </p>
             </div>
-            <p class="mt-4 text-sm text-slate-600 text-center">
-                この３人のバランスが崩れると、心がしんどくなったり、ストレスを感じたりするのです。
-            </p>
         </section>
 
         <!-- まとめ -->
         <section class="text-center">
-            <h2 class="text-2xl font-bold text-slate-800 mb-4">まとめ：自分の心に優しくなろう</h2>
-            <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-                自分でもコントロールできない「無意識」があることを知ると、<strong>「なんだ、完璧じゃなくて当たり前なんだ」</strong>と思えませんか？<br>
-                時には心の中の「無意識」の声（本当の気持ち）に耳を傾けてあげることが、心を健康に保つ秘訣です。
-            </p>
+            <h2 class="text-2xl font-bold text-slate-800 mb-4">まとめ：当たり前を疑ってみよう！</h2>
+            <div class="bg-white p-6 rounded-2xl shadow-sm max-w-2xl mx-auto border border-slate-100">
+                <p class="text-lg text-slate-600 mb-4">
+                    「こうしなきゃいけない」「これが普通だ」<br>
+                    私たちがそう思い込んでいるルールは、もしかしたら**誰かが作り出した「見えない権力」**かもしれません。
+                </p>
+                <p class="text-lg text-slate-600 font-bold text-green-600">
+                    フーコーの哲学は、「当たり前を疑い、自分を縛るものから自由になるためのヒント」を私たちに教えてくれます。
+                </p>
+            </div>
         </section>
 
     </main>
 
     <!-- フッター -->
     <footer class="bg-slate-800 text-slate-300 py-8 text-center text-sm mt-12">
-        <p>&copy; 2026 高校生でもわかる心理学入門</p>
-        <p class="mt-2 text-slate-500">※本ページはフロイトの精神分析の基礎的な考え方を分かりやすく簡略化して解説したものです。</p>
+        <p>&copy; 2026 高校生でもわかる哲学入門</p>
+        <p class="mt-2 text-slate-500 max-w-2xl mx-auto px-4">※本ページはミシェル・フーコーの哲学（権力論、パノプティコンなど）の基礎的な考え方を、高校生向けに分かりやすく簡略化して解説したものです。</p>
     </footer>
 
 </body>
